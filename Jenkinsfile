@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script{
               //  echo $JOB_NAME  
-                    ECHO "TEST MAN COOL"
+                    echo "TEST MAN COOL"
 //Jenkins.instance.getItemByFullName("*downstream-job*").updateNextBuildNumber((Jenkins.instance.getItemByFullName("*upstream-job*").getNextBuildNumber()-1))
                              }
                        }
