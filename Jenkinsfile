@@ -4,7 +4,7 @@ pipeline {
         stage("Setting-Buildnumber-for-downstream-job") {
             steps {
                 script{
-                echo $JOB_NAME  
+              //  echo $JOB_NAME  
 
 //Jenkins.instance.getItemByFullName("*downstream-job*").updateNextBuildNumber((Jenkins.instance.getItemByFullName("*upstream-job*").getNextBuildNumber()-1))
                              }
