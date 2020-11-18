@@ -1,22 +1,35 @@
 pipeline {
     agent any
     stages {
+        stage("printing-branch-name") {
+            steps {
+                script{
+                echo "test"
+
+                             }
+                       }
+        }
+          stage("printing-job-name"){
+        steps {
+        echo "$JOB_NAME"
+}
+}
+
+        
         stage("Setting-Buildnumber-for-downstream-job") {
             steps {
                 script{
-              //  echo $JOB_NAME  
-                    echo "TEST MAN COOL"
-//Jenkins.instance.getItemByFullName("*downstream-job*").updateNextBuildNumber((Jenkins.instance.getItemByFullName("*upstream-job*").getNextBuildNumber()-1))
+                echo "test"
+
+Jenkins.instance.getItemByFullName("test-multibranch/prod").updateNextBuildNumber((Jenkins.instance.getItemByFullName("$JOB_NAME").getNextBuildNumber()-1))
                              }
                        }
         }
           stage("triggering-downstream-job"){
         steps {
-        echo "$JOB_NAME"
-        echo "hello world."
-//    build job: "*downstream-job*"
+    build job: "test-multibranch/prod"
+}
+}
 }
 }
 
-}
-}
