@@ -21,7 +21,7 @@ pipeline {
                 script{
                 echo "main"
 
-Jenkins.instance.getItemByFullName("test-multibranch/test").updateNextBuildNumber((Jenkins.instance.getItemByFullName("$JOB_NAME").getNextBuildNumber()-1))
+Jenkins.instance.getItemByFullName("test-multibranch/test").updateNextBuildNumber((Jenkins.instance.getItemByFullName("$JOB_NAME").getNextBuildNumber())-1)
                              }
                        }
         }
